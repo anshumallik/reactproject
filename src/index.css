@@ -133,8 +133,7 @@ small {
   font-family: "Poppins", sans-serif;
 }
 
-.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active,
-.sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active{
   background-color: #fff;
   color: #308ee0;
 }
@@ -148,17 +147,15 @@ small {
 .img-circle {
   border-radius: 50%;
 }
-.brand-link .brand-image {
-  float: none;
-  max-height: 50px;
-}
+
 .brand-link .brand-image {
   line-height: 0.8;
   margin-left: 0.8rem;
   margin-right: 0.5rem;
   margin-top: -3px;
-  max-height: 33px;
+  max-height: 50px;
   width: auto;
+  float: none;
 }
 .content-wrapper > .content {
   padding: 15px;
