@@ -2,19 +2,19 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
-    return(
+    return (
         <aside className="main-sidebar sidebar-dark-primary elevation-4">
             <div className="text-center">
                 <NavLink to="/" className="brand-link">
                     <img src="assets/images/logo.png" alt="Logo"
-                     className="brand-image"/>
+                        className="brand-image" />
                 </NavLink>
             </div>
             <div className="sidebar">
                 <div className="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div className="image1 my-auto">
-                        <img src="assets/images/user.jpg" 
-                        className="img-circle elevation-2" alt="User" />
+                        <img src="assets/images/user.jpg"
+                            className="img-circle elevation-2" alt="User" />
                     </div>
                     <div className="info">
                         <NavLink to="/" className="d-block"> Administrator </NavLink>
@@ -28,7 +28,7 @@ const Sidebar = () => {
                         </div>
                     </div>
                 </div>
-               
+
                 <nav className="mt-2">
                     <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li className="nav-item">
@@ -37,25 +37,25 @@ const Sidebar = () => {
                                 <p>Dashboard</p>
                             </NavLink>
                         </li>
+
+
+                        <li className="nav-item">
+                            <NavLink to="/subscribed-user" activeclassname="active" className="nav-link">
+                                <i className="nav-icon fa-solid fa-user iCheck"></i>
+                                <p>Subscription Detail List</p>
+                            </NavLink>
+                        </li>
+
                         <li className="nav-item">
                             <NavLink to="/users" activeclassname="active" className="nav-link">
                                 <i className="nav-icon fa-solid fa-user iCheck"></i>
                                 <p>Users List</p>
                             </NavLink>
                         </li>
-                       
-                        <li className="nav-item">
-                            <NavLink to="/subs" activeclassname="active" className="nav-link">
-                                <i className="nav-icon fa-solid fa-user iCheck"></i>
-                                <p>Subscription Detail List</p>
-                            </NavLink>
-                        </li>
-                       
-                        
-                       
+
                     </ul>
                 </nav>
-                
+
             </div>
         </aside>
     )

@@ -29,6 +29,7 @@ const Suscriber = () => {
     }
     useEffect(() => {
         fetch('data/users.json').then((res) => res.json()).then((data) => {
+            console.log(data)
             setUsers(data)
         })
 
@@ -51,12 +52,7 @@ const Suscriber = () => {
         getData()
     }, []);
 
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         $("#subsTable").DataTable();
-    //     }, 1000)
-    // }, []);
-
+   
     return (
         <div className="content-wrapper">
 
@@ -81,7 +77,9 @@ const Suscriber = () => {
                             </div>
 
                         </div>
+
                         <div className="table-responsive w-100">
+                        
                             <table className="table table-hover table-responsive-xl" id="subsTable">
                                 <thead className="table-light">
                                     <tr>

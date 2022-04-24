@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 // import { NavLink } from "react-router-dom";
 const Navbar = () => {
     let date = new Date().toLocaleDateString();
@@ -18,8 +18,8 @@ const Navbar = () => {
             <div className="container-fluid">
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon d-flex align-items-center justify-content-center">
-                    <i class="fa fa-bars"></i></span>
+                    <span className="navbar-toggler-icon d-flex align-items-center justify-content-center">
+                        <i className="fa fa-bars"></i></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -29,8 +29,44 @@ const Navbar = () => {
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/">{date} <span className="ms-2">{ctime}</span></NavLink>
                         </li>
-                        
 
+
+                    </ul>
+                    <ul className="navbar-nav ml-auto">
+
+                        <li className="nav-item dropdown">
+                            <Link id="navbarDropdown" className="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre="">
+                                <img className="img-circle elevation-2 img-size-32 me-1"
+                                    src="assets/images/user.jpg" alt="Admin" />
+                                Administrator<span className="caret"></span>
+                            </Link>
+                            <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style={{ left: 'inherit', right: '0' }}>
+                                <div className="profile-sidebar">
+                                    <div className="profile-userpic justify-content-center text-center">
+                                        <img className="img-responsive" src="assets/images/user.jpg" alt="" />
+                                    </div>
+                                    <div className="profile-usertitle">
+                                        <div className="profile-usertitle-name">
+                                            Administrator
+                                        </div>
+                                        <div className="profile-usertitle-address">
+                                            <i className="fa-solid fa-location-dot me-2"></i>Biratnagar, Nepal
+
+                                        </div>
+                                    </div>
+
+                                    <div className="profile-userbuttons text-center">
+                                        <button type="button" className="btn btn-success btn-sm rounded-0 me-2">
+                                            Profile
+                                        </button>
+                                        <button type="button" className="btn btn-danger btn-sm rounded-0">
+                                            Logout
+                                            
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                     <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li className="nav-item">

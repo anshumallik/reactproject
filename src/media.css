@@ -3,11 +3,14 @@
   footer {
     margin-left: 0;
   }
-  .mainnav .nav-sidebar{
-      display: block;
+  .mainnav .nav-sidebar {
+    display: block;
   }
   .main-sidebar {
     display: none;
+  }
+  .profile-userbuttons {
+    display: block;
   }
   .mainnav {
     margin-left: 0;
@@ -15,12 +18,12 @@
   .navbar-nav .nav-link {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
-}
+  }
   .nav-pills .nav-link {
     color: #fff;
     padding: 0.5rem 0;
   }
-  .nav-pills .nav-link.active{
-      background: transparent;
+  .nav-pills .nav-link.active {
+    background: transparent;
   }
 }

@@ -17,7 +17,7 @@ function App() {
         <Route path="" element={<Dashboard />} />
         <Route path="/users" element={<User />} />
         <Route path="/user-detail/:id" element={<UserDetail />} />
-        <Route path="/subs" element={<Suscriber/>}/>
+        <Route path="/subscribed-user" element={<Suscriber/>}/>
         <Route path='*' element={<Error />} />
       </Routes>
       <Footer />

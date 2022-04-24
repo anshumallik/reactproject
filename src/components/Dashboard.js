@@ -1,5 +1,6 @@
 import React from "react";
 import { Label, XAxis, YAxis, PieChart, Pie, CartesianGrid, BarChart, Bar, AreaChart, Area, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import Common from "./Common";
 
 const data = [
   { "id": 1, "user_id": "4398", "package": "Plan 1", "expires_on": "2022-06-22 17:32:01" },
@@ -314,18 +315,22 @@ const data01 = [
   { name: 'Plan 6', user: data.filter(item => item.package === 'Plan 12').length },
   { name: 'Plan Unlimited', user: data.filter(item => item.package === 'Plan Unlimited').length },
 ];
-;
+
+const plan1 = data.filter(item => item.package === 'Plan 1').length;
+const plan2 = data.filter(item => item.package === 'Plan 2').length;
+const plan3 = data.filter(item => item.package === 'Plan3').length;
+
 const Dashboard = () => {
 
   return (
     <div className='content-wrapper'>
       <div className="container content">
-        <div className="row gy-4">
+        <div className="row gy-3">
           <div className="page-title-box">
-            
+
             <h4 className="page-title mb-0">Dashboard</h4>
           </div>
-          <div className="col-md-7">
+          <div className="col-md-8">
             <div className='card rounded-0'>
               <div className="card-header">
                 <div className="card-title mb-0">
@@ -334,7 +339,7 @@ const Dashboard = () => {
               </div>
               <div className='card-body'>
 
-                <ResponsiveContainer width="100%" height="100%" aspect={2}>
+                <ResponsiveContainer width="100%" height="100%" aspect={3}>
                   <PieChart width={400} height={400}>
                     <Pie
                       dataKey="user"
@@ -349,36 +354,14 @@ const Dashboard = () => {
                     <Tooltip />
                   </PieChart>
                 </ResponsiveContainer>
-              
-
               </div>
             </div>
           </div>
-          <div className="col-md-5">
-            <div className="info-box rounded-0 bg-yellow">
-              <span className="info-box-icon elevation-1"><i className="fas fa-chart-bar"></i></span>
-              <div className="info-box-content">
-                <span className="info-box-text">Total Visits</span>
-                <span className="info-box-number">37</span>
-              </div>
-            </div>
-            <div className="info-box rounded-0 bg-green">
-              <span className="info-box-icon elevation-1"><i className="fab fa-product-hunt"></i></span>
-
-              <div className="info-box-content">
-                <span className="info-box-text">Total Products</span>
-                <span className="info-box-number">13</span>
-              </div>
-
-            </div>
-            <div className="info-box rounded-0 bg-red">
-              <span className="info-box-icon elevation-1"><i className="fas fa-shopping-cart"></i></span>
-              <div className="info-box-content">
-                <span className="info-box-text">Total Order</span>
-                <span className="info-box-number">1</span>
-              </div>
-            </div>
-            
+          <div className="col-md-4">
+            <Common title="Total Plan 1 User" plan={plan1} icon="fas fa-chart-bar" classVal="bg-yellow info-box rounded-0"/>
+            <Common title="Total Plan 2 User" plan={plan2} icon="fa-solid fa-chart-simple" classVal="bg-green info-box rounded-0"/>
+            <Common title="Total Plan 3 User" plan={plan3} icon="fa-solid fa-chart-line" classVal="bg-red info-box rounded-0"/>
+          
           </div>
           <div className="col-md-12">
             <div className='card rounded-0'>
@@ -389,7 +372,7 @@ const Dashboard = () => {
               </div>
               <div className='card-body'>
 
-               
+
                 <ResponsiveContainer width="100%" height="100%" aspect={3}>
 
                   <BarChart
@@ -429,22 +412,22 @@ const Dashboard = () => {
               </div>
               <div className='card-body'>
                 <ResponsiveContainer width="100%" height="100%" aspect={3}>
-                <AreaChart width={1000} height={300} data={data}
-                  margin={{ top: 10, right: 0, left: 20, bottom: 0 }}>
-                  <defs>
+                  <AreaChart width={1000} height={300} data={data}
+                    margin={{ top: 10, right: 0, left: 20, bottom: 0 }}>
+                    <defs>
 
-                    <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8} />
-                      <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
-                    </linearGradient>
-                  </defs>
-                  <XAxis dataKey="package" />
-                  <YAxis dataKey="user_id" />
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <Tooltip />
-                  <Area type="monotone" dataKey="expires_on" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
-                  <Area type="monotone" dataKey="user_id" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
-                </AreaChart>
+                      <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8} />
+                        <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
+                      </linearGradient>
+                    </defs>
+                    <XAxis dataKey="package" />
+                    <YAxis dataKey="user_id" />
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <Tooltip />
+                    <Area type="monotone" dataKey="expires_on" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
+                    <Area type="monotone" dataKey="user_id" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
+                  </AreaChart>
                 </ResponsiveContainer>
               </div>
             </div>
